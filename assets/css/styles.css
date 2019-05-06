@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body {
+    background-color: #483c7a;
+    background: linear-gradient(180deg, rgba(72,60,122,1) 0%, rgba(90,226,217,1) 79%, rgba(90,226,217,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+.page__header {
+    background-color: white;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.header__title{
+    font-size: 20px;
+    color: #14416b;
+    font-weight: 700;
+}
+.page__main {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* justify-content: center; */
+    align-items: center;
+    position: relative;
+
+}
+.main__options{
+    margin: 20px;
+    text-align: center;
+}
+
+.nav__title{
+    font-size: 16px;
+}
+
+.input{
+    margin:10px 5px 10px 20px;
+}
+
+.btn__submit{
+    font-size: 16px;
+    background-color: white;
+    margin: 10px;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #14416b;
+}
+/************** CARTAS ***************/
+
+.cards__container{
+    list-style: none;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+.memory-card{
+    width: 80px;
+    height: 80px;
+    margin:10px;
+    border-radius: 15px;
+    background: rgba(247,52,163,1);
+    background: linear-gradient(160deg, rgb(248, 83, 177) 0%, rgb(252, 160, 63) 80%);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: white ;
+}
+
+
+.memory-card:active{
+    transform: scale(0.98);
+    transition: transform ease 0.1s
+}
+
+
+.card__front{
+    background-color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px 0px #696969;
+    color: #0b969b;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+
+  
+.memory-card.flip {
+    transform: rotateY(-180deg);
+}
+
+.fas {
+    font-size: 50px;
+}
+
+@media all and (min-width:768px) {
+    .header__title{
+        font-size: 28px;
+    }
+}
