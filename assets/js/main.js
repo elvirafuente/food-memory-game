@@ -51,6 +51,7 @@ let resultRandom;
 let firstCard;
 let secondCard;
 let firstClicked = false;
+let acc = 0;
 
 
 //recoger
@@ -107,21 +108,15 @@ function paintCards(){
             cardEl.addEventListener('click', flipCard);
 
         }
-    
-    const cards = cardsUl.querySelectorAll('.memory-card'); 
 }
 
 function flipCard(event){
     event.currentTarget.classList.add('flip');
     if(firstClicked === false){
         firstCard = event.currentTarget;
-        console.log('first:' + firstCard.dataset.pair);
-        //console.log('second:' + secondCard.dataset.pair);
         firstClicked = true;
     } else {
     secondCard = event.currentTarget;
-    console.log('first:' + firstCard.dataset.pair);
-    console.log('second:' + secondCard.dataset.pair);
     blockCards();
     if(firstCard && secondCard){
         if (firstCard.dataset.pair === secondCard.dataset.pair){
@@ -133,10 +128,14 @@ function flipCard(event){
             secondCard = '';
             firstClicked = false;
             unblockCards();
+            acc = acc + 2;
+            console.log(acc);
+            if (acc === resultRandom.length){
+                console.log('hola');
+            }
         } else {
             setTimeout(flipBack, 1000);
-            changeColor("#bc2701");
-            
+            changeColor("#bc2701");            
         }
     }
     }
