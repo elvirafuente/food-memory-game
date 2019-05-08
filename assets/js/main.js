@@ -58,9 +58,12 @@ let acc = 0;
 const inputs = document.querySelectorAll('.input');
 const btnSubmit = document.querySelector('.btn__submit');
 const cardsUl = document.querySelector('.cards__container');
+const modal = document.querySelector('.modal__container');
+const btnModal = document.querySelector('.modal__button');
+
+modal.style.display = 'none';
 
 function handlerClick(){
-
     resultRandom = [''];
     cardsUl.innerHTML = '';
     checkNumberOption();
@@ -131,7 +134,8 @@ function flipCard(event){
             acc = acc + 2;
             console.log(acc);
             if (acc === resultRandom.length){
-                console.log('hola');
+                modal.style.display = '';
+                console.log(btnModal);
             }
         } else {
             setTimeout(flipBack, 1000);
@@ -179,5 +183,18 @@ function unblockCards(){
     }
 }
 
+function handlerModalClick(){
+    modal.style.display="none";
+    acc = 0;
+    cardsUl.innerHTML = '';
+    for(let i = 0; i< inputs.length;i++){
+        if(inputs[i].checked){
+            inputs[i].checked = false;
+        }
+    }
+
+}
+
 //listener
 btnSubmit.addEventListener('click', handlerClick);
+btnModal.addEventListener('click' , handlerModalClick);
