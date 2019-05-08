@@ -69,8 +69,6 @@ function handlerClick(){
     checkNumberOption();
     getRandomOrder()
     paintCards();
-    // console.log(cardsValueArray);
-    console.log(resultRandom);
 }
 
 function checkNumberOption(){
@@ -81,7 +79,6 @@ function checkNumberOption(){
     }
     createNewArray(cardsNumber);
     cardsValueArray = cardsValue.concat(cardsValue);
-    //console.log(cardsValueArray);
 }
 
 function getRandomOrder(){
@@ -132,10 +129,8 @@ function flipCard(event){
             firstClicked = false;
             unblockCards();
             acc = acc + 2;
-            console.log(acc);
             if (acc === resultRandom.length){
                 modal.style.display = '';
-                console.log(btnModal);
             }
         } else {
             setTimeout(flipBack, 1000);
